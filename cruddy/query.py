@@ -94,7 +94,7 @@ def user_loader(user_id):
 
 
 # Authorise new user requires user_name, email, password
-def authorize(name, email, password):
+def authorize(name, email, password,):
     if is_user(email, password):
         return False
     else:
