@@ -17,6 +17,9 @@ app.register_blueprint(app_crud_api)
 app.register_blueprint(app_frontend)
 app.register_blueprint(app_y2022)
 
+@app.route('/authorize')
+def authorize():
+    return render_template("authorize.html")
 
 @app.route('/')
 def index():
