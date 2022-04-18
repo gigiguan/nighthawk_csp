@@ -46,6 +46,18 @@ def crud_login():
     # if not logged in, show the login page
     return render_template("login.html")
 
+@app_crud.route('/login2/', methods=["GET", "POST"])
+def crud_login2():
+    # obtains form inputs and fulfills login requirements
+    if request.form:
+        email = request.form.get("email")
+        password = request.form.get("password")
+        if login(email, password):       # zero index [0] used as email is a tuple
+            return redirect(url_for('algorithm.fibonacci'))
+
+    # if not logged in, show the login page
+    return render_template("login2.html")
+
 @app_crud.route("/logout")
 @login_required
 def logout():
